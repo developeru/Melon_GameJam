@@ -292,16 +292,30 @@ zoom = Vector2(1.3, 1.3)
 limit_left = 0
 
 [node name="Ground" type="StaticBody2D" parent="."]
-scale = Vector2(3.16, 1)
+scale = Vector2(0.955, 0.77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(642, 711)
+position = Vector2(629.342, 918)
 shape = SubResource("RectangleShape2D_idhfj")
 one_way_collision_margin = 2.3
 debug_color = Color(0, 0.596078, 0.72549, 0.419608)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
-position = Vector2(640, 711)
+position = Vector2(627.342, 918)
+scale = Vector2(1280, 250)
+mesh = SubResource("QuadMesh_f4hvr")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+scale = Vector2(0.955, 0.77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(3636.76, 1676.95)
+shape = SubResource("RectangleShape2D_idhfj")
+one_way_collision_margin = 2.3
+debug_color = Color(0, 0.596078, 0.72549, 0.419608)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground2"]
+position = Vector2(3634.76, 1676.95)
 scale = Vector2(1280, 250)
 mesh = SubResource("QuadMesh_f4hvr")
 
@@ -310,11 +324,11 @@ position = Vector2(-2512, -596)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(3785, 431)
+position = Vector2(4558, 591.582)
 shape = SubResource("RectangleShape2D_snefn")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Wall"]
-position = Vector2(3785.24, 430.5)
+position = Vector2(4558.24, 591.082)
 scale = Vector2(52.4803, 129)
 mesh = SubResource("QuadMesh_fcl7x")
 
@@ -323,11 +337,24 @@ position = Vector2(-999, -389)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(3785, 431)
+position = Vector2(4263, 618.418)
 shape = SubResource("RectangleShape2D_snefn")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Wall3"]
-position = Vector2(3785.24, 430.5)
+position = Vector2(4263.24, 617.918)
+scale = Vector2(52.4803, 129)
+mesh = SubResource("QuadMesh_fcl7x")
+
+[node name="Wall5" type="StaticBody2D" parent="."]
+position = Vector2(-999, -389)
+scale = Vector2(1, 1.975)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
+position = Vector2(4559, 656.392)
+shape = SubResource("RectangleShape2D_snefn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall5"]
+position = Vector2(4559.24, 655.892)
 scale = Vector2(52.4803, 129)
 mesh = SubResource("QuadMesh_fcl7x")
 
@@ -336,11 +363,11 @@ position = Vector2(-759, -548)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(3785, 431)
+position = Vector2(4173, 818.924)
 shape = SubResource("RectangleShape2D_snefn")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Wall4"]
-position = Vector2(3785.24, 430.5)
+position = Vector2(4173.24, 818.424)
 scale = Vector2(52.4803, 129)
 mesh = SubResource("QuadMesh_fcl7x")
 
@@ -348,12 +375,12 @@ mesh = SubResource("QuadMesh_fcl7x")
 position = Vector2(-792, -243)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(5242, 453)
+position = Vector2(5727, 1037.85)
 scale = Vector2(1, 0.8)
 shape = SubResource("RectangleShape2D_3cece")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Wall2"]
-position = Vector2(5239, 484)
+position = Vector2(5724, 1068.85)
 scale = Vector2(1852, 733.695)
 mesh = SubResource("QuadMesh_fcl7x")
 
@@ -361,46 +388,32 @@ mesh = SubResource("QuadMesh_fcl7x")
 position = Vector2(-68, -146)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(1074, 485)
+position = Vector2(2028.59, 1404.33)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ykf10")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
-position = Vector2(1073.91, 485)
+position = Vector2(2028.5, 1404.33)
 rotation = 1.5708
 scale = Vector2(48.652, 175)
-mesh = SubResource("QuadMesh_fcl7x")
-
-[node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(-386, 20)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-position = Vector2(1097.5, 458)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_s1fdx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
-position = Vector2(1097.37, 458)
-rotation = 1.5708
-scale = Vector2(48.652, 221.921)
 mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Platform4" type="StaticBody2D" parent="."]
 position = Vector2(495, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
-position = Vector2(1097.5, 458)
+position = Vector2(1137.09, 789.326)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_s1fdx")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform4"]
-position = Vector2(1097.37, 458)
+position = Vector2(1136.96, 789.326)
 rotation = 1.5708
 scale = Vector2(48.652, 221.921)
 mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Platform5" type="StaticBody2D" parent="."]
-position = Vector2(2311, -559)
+position = Vector2(2796, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
 position = Vector2(1097.5, 458)
@@ -417,12 +430,12 @@ mesh = SubResource("QuadMesh_fcl7x")
 position = Vector2(828, -231)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-position = Vector2(1097.5, 458)
+position = Vector2(1614.09, 1302.33)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_s1fdx")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
-position = Vector2(1097.37, 458)
+position = Vector2(1613.96, 1302.33)
 rotation = 1.5708
 scale = Vector2(48.652, 221.921)
 mesh = SubResource("QuadMesh_fcl7x")
@@ -459,7 +472,7 @@ autoplay = true
 position = Vector2(-4679, 450)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon"]
-position = Vector2(5388.25, -24.75)
+position = Vector2(5513.25, 132.25)
 shape = SubResource("RectangleShape2D_c7qkg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon"]
@@ -469,7 +482,7 @@ libraries = {
 autoplay = "Inactive"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon"]
-position = Vector2(5390.25, -127.5)
+position = Vector2(5515.25, 29.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_qot31")
 animation = &"Inactive"
@@ -479,7 +492,7 @@ frame = 1
 position = Vector2(-2363, 180)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon3"]
-position = Vector2(5388.25, -24.75)
+position = Vector2(6005.25, 987.25)
 shape = SubResource("RectangleShape2D_c7qkg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon3"]
@@ -489,27 +502,7 @@ libraries = {
 autoplay = "Inactive"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon3"]
-position = Vector2(5390.25, -127.5)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_qot31")
-animation = &"Inactive"
-frame = 1
-
-[node name="Beacon2" type="StaticBody2D" parent="."]
-position = Vector2(-3470, 201)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon2"]
-position = Vector2(5388.25, -24.75)
-shape = SubResource("RectangleShape2D_c7qkg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon2"]
-libraries = {
-"": SubResource("AnimationLibrary_uxa63")
-}
-autoplay = "Inactive"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon2"]
-position = Vector2(5390.25, -127.5)
+position = Vector2(6007.25, 884.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_qot31")
 animation = &"Inactive"
