@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://bmesi8pw4g2ao"]
 
-[ext_resource type="Script" path="res://scripts/Pause.gd" id="1_obow5"]
+[ext_resource type="Script" path="res://scripts/World.gd" id="1_obow5"]
 [ext_resource type="Script" path="res://scripts/Movement.gd" id="2_nmv5f"]
 [ext_resource type="Texture2D" uid="uid://cryo0fnpaguy2" path="res://sprites/player/idle/Idle_animation_0000.png" id="3_cvc22"]
 [ext_resource type="Texture2D" uid="uid://ddojd234ywc2s" path="res://sprites/player/idle/Idle_animation_0001.png" id="4_i7f3u"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://b0ih83s82nrox"]
 
-[ext_resource type="Script" path="res://scripts/Pause.gd" id="1_eigbo"]
+[ext_resource type="Script" path="res://scripts/World.gd" id="1_eigbo"]
 [ext_resource type="Script" path="res://scripts/Movement.gd" id="2_q5ofc"]
 [ext_resource type="Texture2D" uid="uid://cryo0fnpaguy2" path="res://sprites/player/idle/Idle_animation_0000.png" id="3_o8ui1"]
 [ext_resource type="Texture2D" uid="uid://ddojd234ywc2s" path="res://sprites/player/idle/Idle_animation_0001.png" id="4_7njso"]
@@ -416,29 +416,6 @@ rotation = 1.5708
 scale = Vector2(48.652, 221.921)
 mesh = SubResource("QuadMesh_fcl7x")
 
-[node name="Paused" type="Node" parent="."]
-process_mode = 2
-
-[node name="Resume" type="Button" parent="Paused"]
-visible = false
-offset_left = 460.0
-offset_top = 220.0
-offset_right = 856.0
-offset_bottom = 515.0
-theme_override_fonts/font = ExtResource("17_76o57")
-theme_override_font_sizes/font_size = 60
-text = "Resume"
-
-[node name="Label" type="Label" parent="Paused"]
-visible = false
-offset_left = 403.0
-offset_top = 92.0
-offset_right = 932.0
-offset_bottom = 122.0
-theme_override_fonts/font = ExtResource("17_76o57")
-theme_override_font_sizes/font_size = 25
-text = "You have paused the game. Press \"Resume\" or Enter to unpause"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_0xran")
 volume_db = -20.0
@@ -464,4 +441,52 @@ sprite_frames = SubResource("SpriteFrames_qot31")
 animation = &"Inactive"
 frame = 1
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Paused" type="Node" parent="."]
+process_mode = 2
+
+[node name="Resume" type="Button" parent="Paused"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 460.0
+offset_top = 220.0
+offset_right = 856.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("17_76o57")
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[node name="Label" type="Label" parent="Paused"]
+offset_left = 227.0
+offset_top = 266.0
+offset_right = 843.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("17_76o57")
+theme_override_font_sizes/font_size = 25
+text = "You have paused the game. Press \"Resume\" or Enter to unpause"
+
+[node name="Paused2" type="Node" parent="."]
+process_mode = 2
+
+[node name="Resume2" type="Button" parent="Paused2"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Paused2"]
+offset_left = 2422.0
+offset_top = -1784.0
+offset_right = 3783.0
+offset_bottom = -1670.0
+theme_override_fonts/font = ExtResource("17_76o57")
+theme_override_font_sizes/font_size = 100
+text = "Map Inspector (Press M to leave)"
+
+[node name="Camera2D" type="Camera2D" parent="Paused2"]
+position = Vector2(3099, -58)
+zoom = Vector2(0.2, 0.2)
+
 [connection signal="pressed" from="Paused/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Paused2/Resume2" to="." method="_on_resume_2_pressed"]

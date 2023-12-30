@@ -8,16 +8,59 @@ var enableGlide = false
 var enableLatching = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var limit = 0
 var playerGravity = gravity
 
 @onready var animPlayer = get_node("AnimationPlayer") #Gets the AnimationPlayer node once the node has loaded
 @onready var animSprite = get_node("AnimatedSprite2D") #Gets the AnimationSprite node once the node has loaded
 
+@onready var world =  get_tree().get_root().get_node("World")
+var isInsideB1 := false
+var isInsideB2 := false
+
+func _ready():
+	isInsideB1 = false
+	isInsideB2 = false
+	
+func _on_beacon_1_body_entered(body):
+	isInsideB1 = true
+	print("?")
+
+func _on_beacon_1_body_exited(body):
+	isInsideB1 = false
+	print("??")
+	
+func _on_beacon_2_body_entered(body):
+	isInsideB2 = true
+	print("???")
+	
+func _on_beacon_2_body_exited(body):
+	isInsideB2 = false
+	print("????")
+
+
 func MakeStatic():
 	playerGravity = 0
 	velocity.x = 0
 	velocity.y = 0
+
+func _process(delta):
+		if limit == 0:
+			isInsideB1 = false
+			isInsideB2 = false
+			limit = 1
+		
+		print(isInsideB1)
+		print(isInsideB2)
+		if Input.is_action_just_pressed("ui_charm") && (isInsideB1 || isInsideB2):
+			
+			if isInsideB1:
+				world.isB1Activated = true
+				
+			if isInsideB2:
+				world.isB2Activated = true
+				
+			
 
 	
 func _physics_process(delta):
@@ -71,4 +114,3 @@ func _physics_process(delta):
 		MakeStatic() #Cancels all forces suffered by the player
 		
 	move_and_slide()
-

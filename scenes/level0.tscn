@@ -1,6 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://c0g0nvvwqsoly"]
+[gd_scene load_steps=43 format=3 uid="uid://c0g0nvvwqsoly"]
 
-[ext_resource type="Script" path="res://scripts/Pause.gd" id="1_k5gax"]
+[ext_resource type="Script" path="res://scripts/World.gd" id="1_fuumv"]
 [ext_resource type="Script" path="res://scripts/Movement.gd" id="2_tvwa3"]
 [ext_resource type="Texture2D" uid="uid://cryo0fnpaguy2" path="res://sprites/player/idle/Idle_animation_0000.png" id="3_iname"]
 [ext_resource type="Texture2D" uid="uid://ddojd234ywc2s" path="res://sprites/player/idle/Idle_animation_0001.png" id="4_smt4a"]
@@ -175,7 +175,7 @@ size = Vector2(52, 126)
 [sub_resource type="QuadMesh" id="QuadMesh_fcl7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cece"]
-size = Vector2(1849, 848)
+size = Vector2(1849, 845.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykf10"]
 size = Vector2(48.0004, 174)
@@ -256,8 +256,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6sa4"]
+size = Vector2(69.5, 51.5)
+
 [node name="World" type="Node2D"]
-script = ExtResource("1_k5gax")
+script = ExtResource("1_fuumv")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(5, -335)
@@ -333,7 +336,7 @@ mesh = SubResource("QuadMesh_fcl7x")
 [node name="Wall2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(5242, 453)
+position = Vector2(5242, 454.1)
 scale = Vector2(1, 0.8)
 shape = SubResource("RectangleShape2D_3cece")
 
@@ -368,6 +371,46 @@ position = Vector2(1097.37, 458)
 rotation = 1.5708
 scale = Vector2(48.652, 221.921)
 mesh = SubResource("QuadMesh_fcl7x")
+
+[node name="Beacon1" type="Area2D" parent="."]
+position = Vector2(11, 115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon1"]
+position = Vector2(5388.25, -24.75)
+shape = SubResource("RectangleShape2D_c7qkg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon1"]
+libraries = {
+"": SubResource("AnimationLibrary_uxa63")
+}
+autoplay = "Inactive"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon1"]
+position = Vector2(5390.25, -127.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_qot31")
+animation = &"Inactive"
+frame = 1
+
+[node name="Beacon2" type="Area2D" parent="."]
+position = Vector2(-705, 115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon2"]
+position = Vector2(5388.25, -24.75)
+shape = SubResource("RectangleShape2D_v6sa4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon2"]
+libraries = {
+"": SubResource("AnimationLibrary_uxa63")
+}
+autoplay = "Inactive"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon2"]
+position = Vector2(5390.25, -127.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_qot31")
+animation = &"Inactive"
+frame = 1
 
 [node name="Paused" type="Node" parent="."]
 process_mode = 2
@@ -417,26 +460,6 @@ zoom = Vector2(0.2, 0.2)
 stream = ExtResource("18_xy8cw")
 volume_db = -20.0
 autoplay = true
-
-[node name="Beacon" type="StaticBody2D" parent="."]
-position = Vector2(11, 112)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon"]
-position = Vector2(5388.25, -24.75)
-shape = SubResource("RectangleShape2D_c7qkg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon"]
-libraries = {
-"": SubResource("AnimationLibrary_uxa63")
-}
-autoplay = "Inactive"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon"]
-position = Vector2(5390.25, -127.5)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_qot31")
-animation = &"Inactive"
-frame = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 114.0
@@ -534,5 +557,24 @@ there's only one - charm it
 by pressing the E key "
 horizontal_alignment = 1
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerL" type="Label" parent="CanvasLayer"]
+offset_left = 37.0
+offset_top = 259.0
+offset_right = 77.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("17_x0ede")
+theme_override_font_sizes/font_size = 15
+
+[connection signal="body_entered" from="Beacon1" to="Player" method="_on_beacon_1_body_entered"]
+[connection signal="body_exited" from="Beacon1" to="Player" method="_on_beacon_1_body_exited"]
+[connection signal="body_entered" from="Beacon2" to="Player" method="_on_beacon_2_body_entered"]
+[connection signal="body_exited" from="Beacon2" to="Player" method="_on_beacon_2_body_exited"]
 [connection signal="pressed" from="Paused/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paused2/Resume2" to="." method="_on_resume_2_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
