@@ -374,6 +374,7 @@ process_mode = 2
 
 [node name="Resume" type="Button" parent="Paused"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = 460.0
 offset_top = 220.0
 offset_right = 856.0
@@ -383,14 +384,34 @@ theme_override_font_sizes/font_size = 60
 text = "Resume"
 
 [node name="Label" type="Label" parent="Paused"]
-visible = false
-offset_left = 403.0
-offset_top = 92.0
-offset_right = 932.0
-offset_bottom = 122.0
+offset_left = 227.0
+offset_top = 266.0
+offset_right = 843.0
+offset_bottom = 296.0
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 25
 text = "You have paused the game. Press \"Resume\" or Enter to unpause"
+
+[node name="Paused2" type="Node" parent="."]
+process_mode = 2
+
+[node name="Resume2" type="Button" parent="Paused2"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Paused2"]
+offset_left = 2422.0
+offset_top = -1784.0
+offset_right = 3783.0
+offset_bottom = -1670.0
+theme_override_fonts/font = ExtResource("17_x0ede")
+theme_override_font_sizes/font_size = 100
+text = "Map Inspector (Press M to leave)"
+
+[node name="Camera2D" type="Camera2D" parent="Paused2"]
+position = Vector2(3099, -58)
+zoom = Vector2(0.2, 0.2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_xy8cw")
@@ -514,3 +535,4 @@ by pressing the E key "
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Paused/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Paused2/Resume2" to="." method="_on_resume_2_pressed"]
