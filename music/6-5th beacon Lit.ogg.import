@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3so2ykmxrspd"
+path="res://.godot/imported/6-5th beacon Lit.ogg-909daf9f8b1531b9becec2456405d3ce.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/6-5th beacon Lit.ogg"
+dest_files=["res://.godot/imported/6-5th beacon Lit.ogg-909daf9f8b1531b9becec2456405d3ce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

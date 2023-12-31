@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbhemcgur4736"
+path="res://.godot/imported/13-Footstep ground 4.ogg-a5c44da8c9c86ac8364fd7fc144fd77f.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/13-Footstep ground 4.ogg"
+dest_files=["res://.godot/imported/13-Footstep ground 4.ogg-a5c44da8c9c86ac8364fd7fc144fd77f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

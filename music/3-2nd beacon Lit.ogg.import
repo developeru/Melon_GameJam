@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3tkv0jkk5ivo"
+path="res://.godot/imported/3-2nd beacon Lit.ogg-81beff1b3c27e67fb4148a51e9bb559f.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/3-2nd beacon Lit.ogg"
+dest_files=["res://.godot/imported/3-2nd beacon Lit.ogg-81beff1b3c27e67fb4148a51e9bb559f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

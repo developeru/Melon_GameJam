@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxb63dn5qiem8"
+path="res://.godot/imported/Melon Jam TRACK adjustments.wav-f1aa4b4c2ae426d180801d2164f92bbd.sample"
+
+[deps]
+
+source_file="res://music/Melon Jam TRACK adjustments.wav"
+dest_files=["res://.godot/imported/Melon Jam TRACK adjustments.wav-f1aa4b4c2ae426d180801d2164f92bbd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

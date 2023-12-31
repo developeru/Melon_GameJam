@@ -1,9 +1,12 @@
-[gd_scene load_steps=43 format=3 uid="uid://c0g0nvvwqsoly"]
+[gd_scene load_steps=53 format=3 uid="uid://c0g0nvvwqsoly"]
 
 [ext_resource type="Script" path="res://scripts/World.gd" id="1_fuumv"]
 [ext_resource type="Script" path="res://scripts/Movement.gd" id="2_tvwa3"]
+[ext_resource type="Shader" path="res://shaders/level0.gdshader" id="2_ybkgm"]
 [ext_resource type="Texture2D" uid="uid://cryo0fnpaguy2" path="res://sprites/player/idle/Idle_animation_0000.png" id="3_iname"]
+[ext_resource type="Texture2D" uid="uid://c00t5r3jdfd7e" path="res://sprites/bg/level background1B&W.png" id="4_2f3oy"]
 [ext_resource type="Texture2D" uid="uid://ddojd234ywc2s" path="res://sprites/player/idle/Idle_animation_0001.png" id="4_smt4a"]
+[ext_resource type="Shader" path="res://shaders/level0_2.gdshader" id="5_08swh"]
 [ext_resource type="Texture2D" uid="uid://bjl1x4vtwwkkd" path="res://sprites/player/idle/Idle_animation_0002.png" id="5_lpw48"]
 [ext_resource type="Texture2D" uid="uid://ivx6sqnvipav" path="res://sprites/player/running/Timeline 1_0000.png" id="6_2q568"]
 [ext_resource type="Texture2D" uid="uid://tig253slp26p" path="res://sprites/player/running/Timeline 1_0001.png" id="7_upd2c"]
@@ -17,11 +20,41 @@
 [ext_resource type="Texture2D" uid="uid://81xm8s1acee1" path="res://sprites/player/running/Timeline 1_0009.png" id="15_jioud"]
 [ext_resource type="Texture2D" uid="uid://bvponi5e85cni" path="res://sprites/player/running/Timeline 1_0010.png" id="16_f58jj"]
 [ext_resource type="FontFile" uid="uid://dw4q2lgvxq2x8" path="res://font/KnightWarrior-w16n8.otf" id="17_x0ede"]
-[ext_resource type="AudioStream" uid="uid://53pfqccq01s1" path="res://music/MelonJam_Track_1_draft.mp3" id="18_xy8cw"]
 [ext_resource type="Texture2D" uid="uid://bguejwiflte4e" path="res://sprites/beacon/inactive/Beacon_inactive_0000.png" id="19_6l3lk"]
 [ext_resource type="Texture2D" uid="uid://cc51k64u1tpq2" path="res://sprites/beacon/inactive/Beacon_inactive_0001.png" id="20_kga57"]
 [ext_resource type="Texture2D" uid="uid://cthjqe0j1rqlo" path="res://sprites/beacon/inactive/Beacon_inactive_0002.png" id="21_plq5f"]
 [ext_resource type="Texture2D" uid="uid://bsild7akmvubb" path="res://sprites/beacon/inactive/Beacon_inactive_0003.png" id="22_s60mc"]
+[ext_resource type="AudioStream" uid="uid://cxb63dn5qiem8" path="res://music/Melon Jam TRACK adjustments.wav" id="25_ntvsv"]
+[ext_resource type="Texture2D" uid="uid://c6l8007o6w1sa" path="res://masks/simple-white-circle-and-drop-shadow-png.png" id="26_yvr8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y4ca"]
+size = Vector2(132, 1941)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjhye"]
+size = Vector2(165, 5175.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfgh1"]
+size = Vector2(171, 5137)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rdsmf"]
+shader = ExtResource("2_ybkgm")
+shader_parameter/a = 0.084
+shader_parameter/b = 0.126
+shader_parameter/h = 0.73
+shader_parameter/k = 0.609
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vs4px"]
+load_path = "res://.godot/imported/level background1color.png-9d2ead49192c7428e93264c5d8b4d697.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amva7"]
+shader = ExtResource("5_08swh")
+shader_parameter/a = 0.084
+shader_parameter/b = 0.126
+shader_parameter/h = 0.906
+shader_parameter/k = 0.6
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bu6mi"]
+load_path = "res://.godot/imported/level background1color.png-9d2ead49192c7428e93264c5d8b4d697.ctex"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6e7f"]
 radius = 16.0
@@ -162,26 +195,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idhfj"]
-size = Vector2(1276, 241)
-
-[sub_resource type="QuadMesh" id="QuadMesh_f4hvr"]
+size = Vector2(921, 181)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bywn"]
-size = Vector2(1663, 241)
+size = Vector2(1184, 400)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snefn"]
-size = Vector2(52, 126)
-
-[sub_resource type="QuadMesh" id="QuadMesh_fcl7x"]
+size = Vector2(40, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cece"]
-size = Vector2(1849, 845.25)
+size = Vector2(1636.5, 922.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykf10"]
-size = Vector2(48.0004, 174)
+size = Vector2(27.5001, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fdx"]
-size = Vector2(48.0004, 221)
+size = Vector2(39.9994, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7qkg"]
 size = Vector2(69.5, 51.5)
@@ -259,23 +288,87 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6sa4"]
 size = Vector2(69.5, 51.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo05i"]
+size = Vector2(28, 77)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_fuumv")
 
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(6232, -135)
+shape = SubResource("RectangleShape2D_5y4ca")
+
+[node name="Top" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(3716.25, -1195.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_xjhye")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(1213, -136.5)
+shape = SubResource("RectangleShape2D_5y4ca")
+
+[node name="Bottom" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(3722.5, 909.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_dfgh1")
+
+[node name="BGBW" type="TextureRect" parent="."]
+light_mask = 0
+offset_left = 1284.0
+offset_top = -1111.0
+offset_right = 6172.0
+offset_bottom = 844.0
+texture = ExtResource("4_2f3oy")
+
+[node name="BGC" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_rdsmf")
+offset_left = 1290.0
+offset_top = -1116.0
+offset_right = 6178.0
+offset_bottom = 839.0
+texture = SubResource("CompressedTexture2D_vs4px")
+
+[node name="BGCMain" type="TextureRect" parent="."]
+visible = false
+offset_left = 1290.0
+offset_top = -1116.0
+offset_right = 6178.0
+offset_bottom = 839.0
+texture = SubResource("CompressedTexture2D_vs4px")
+
+[node name="BGC2" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_amva7")
+offset_left = 1290.0
+offset_top = -1116.0
+offset_right = 6178.0
+offset_bottom = 839.0
+texture = SubResource("CompressedTexture2D_bu6mi")
+
 [node name="Player" type="CharacterBody2D" parent="."]
+top_level = true
 position = Vector2(5, -335)
 script = ExtResource("2_tvwa3")
 
 [node name="RayCast2D" type="RayCast2D" parent="Player"]
-position = Vector2(193.625, 840.75)
+position = Vector2(1521.63, 729.75)
 target_position = Vector2(22, 0)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Player"]
-position = Vector2(193.625, 840.75)
+position = Vector2(1521.63, 729.75)
 target_position = Vector2(-22, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(193.625, 840.75)
+position = Vector2(1521.63, 729.75)
 shape = SubResource("CapsuleShape2D_c6e7f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -285,98 +378,66 @@ libraries = {
 autoplay = "Idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(194.625, 828.75)
+position = Vector2(1522.63, 717.75)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_3u1to")
 animation = &"Idle"
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(366, 849)
+position = Vector2(1772, 738)
 zoom = Vector2(1.3, 1.3)
 limit_left = 0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(642, 711)
+position = Vector2(1906.5, 529.5)
 shape = SubResource("RectangleShape2D_idhfj")
 one_way_collision_margin = 2.3
 debug_color = Color(0, 0.596078, 0.72549, 0.419608)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
-position = Vector2(640, 711)
-scale = Vector2(1280, 250)
-mesh = SubResource("QuadMesh_f4hvr")
-
 [node name="Ground2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
-position = Vector2(3487.5, 731.5)
+position = Vector2(3940, 652)
 shape = SubResource("RectangleShape2D_8bywn")
 one_way_collision_margin = 2.3
 debug_color = Color(0, 0.596078, 0.72549, 0.419608)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground2"]
-position = Vector2(3487.5, 729.5)
-scale = Vector2(1663, 243)
-mesh = SubResource("QuadMesh_f4hvr")
-
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(3785, 431)
+position = Vector2(4160, 367)
 shape = SubResource("RectangleShape2D_snefn")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall"]
-position = Vector2(3785.24, 430.5)
-scale = Vector2(52.4803, 129)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(5242, 454.1)
+position = Vector2(5348.25, 473)
 scale = Vector2(1, 0.8)
 shape = SubResource("RectangleShape2D_3cece")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall2"]
-position = Vector2(5239, 484)
-scale = Vector2(1852, 733.695)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Platform" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(1074, 485)
+position = Vector2(2216, 363)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ykf10")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
-position = Vector2(1073.91, 485)
-rotation = 1.5708
-scale = Vector2(48.652, 175)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Platform2" type="StaticBody2D" parent="."]
 position = Vector2(414, -162)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-position = Vector2(1097.5, 458)
+position = Vector2(2115, 393)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_s1fdx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
-position = Vector2(1097.37, 458)
-rotation = 1.5708
-scale = Vector2(48.652, 221.921)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Beacon1" type="Area2D" parent="."]
 position = Vector2(11, 115)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon1"]
-position = Vector2(5388.25, -24.75)
+position = Vector2(5679.25, -38.75)
 shape = SubResource("RectangleShape2D_c7qkg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon1"]
@@ -386,7 +447,7 @@ libraries = {
 autoplay = "Inactive"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon1"]
-position = Vector2(5390.25, -127.5)
+position = Vector2(5681.25, -141.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_qot31")
 animation = &"Inactive"
@@ -396,7 +457,7 @@ frame = 1
 position = Vector2(-705, 115)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon2"]
-position = Vector2(5388.25, -24.75)
+position = Vector2(5593.25, -38.75)
 shape = SubResource("RectangleShape2D_v6sa4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon2"]
@@ -406,7 +467,7 @@ libraries = {
 autoplay = "Inactive"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon2"]
-position = Vector2(5390.25, -127.5)
+position = Vector2(5595.25, -141.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_qot31")
 animation = &"Inactive"
@@ -427,10 +488,10 @@ theme_override_font_sizes/font_size = 60
 text = "Resume"
 
 [node name="Label" type="Label" parent="Paused"]
-offset_left = 227.0
-offset_top = 266.0
-offset_right = 843.0
-offset_bottom = 296.0
+offset_left = 523.0
+offset_top = 146.0
+offset_right = 1139.0
+offset_bottom = 176.0
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 25
 text = "You have paused the game. Press \"Resume\" or Enter to unpause"
@@ -453,31 +514,33 @@ theme_override_font_sizes/font_size = 100
 text = "Map Inspector (Press M to leave)"
 
 [node name="Camera2D" type="Camera2D" parent="Paused2"]
-position = Vector2(3099, -58)
-zoom = Vector2(0.2, 0.2)
+position = Vector2(3714, 132)
+zoom = Vector2(0.25, 0.25)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_xy8cw")
-volume_db = -20.0
+stream = ExtResource("25_ntvsv")
+volume_db = -2.87
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 114.0
-offset_top = 326.0
-offset_right = 387.0
-offset_bottom = 465.0
+offset_left = 1437.0
+offset_top = 226.0
+offset_right = 1710.0
+offset_bottom = 365.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
-text = "This is GlitterDash. 
+text = "This is ColourChasm. 
 Your objective is to light up
 all the beacons while passing
 through various obstacles"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 670.0
-offset_top = 452.0
-offset_right = 965.0
-offset_bottom = 591.0
+offset_left = 1858.0
+offset_top = 380.0
+offset_right = 2153.0
+offset_bottom = 519.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
 text = "Press Space, UP_ARROW
@@ -485,10 +548,11 @@ text = "Press Space, UP_ARROW
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1124.0
-offset_top = 374.0
-offset_right = 1419.0
-offset_bottom = 513.0
+offset_left = 2148.0
+offset_top = 266.0
+offset_right = 2443.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
 text = "To Double Jump, 
@@ -496,33 +560,37 @@ press a jump key twice"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 1602.0
-offset_top = 169.0
-offset_right = 1897.0
-offset_bottom = 308.0
+offset_left = 2412.0
+offset_top = 53.0
+offset_right = 2645.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
 text = "As you've probably noticed,
 your player glides when you
- double jump
+ double jump.
 Try to jump across this void"
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 2799.0
-offset_top = 517.0
-offset_right = 3094.0
-offset_bottom = 547.0
+offset_left = 3466.0
+offset_top = 327.0
+offset_right = 3761.0
+offset_bottom = 357.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
-text = "You've made it!!"
+text = "You've made it!! Use M to Inspect
+ and q twice to descend faster"
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="."]
-offset_left = 3432.0
-offset_top = 466.0
-offset_right = 3727.0
-offset_bottom = 544.0
+offset_left = 3858.0
+offset_top = 337.0
+offset_right = 4153.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
 text = "To Latch onto walls, 
@@ -531,10 +599,11 @@ press ctrl or shift"
 horizontal_alignment = 1
 
 [node name="Label7" type="Label" parent="."]
-offset_left = 4029.0
-offset_top = 440.0
-offset_right = 4324.0
-offset_bottom = 579.0
+offset_left = 4238.0
+offset_top = 295.0
+offset_right = 4533.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
 text = "Oh, no, a really high wall! 
@@ -544,33 +613,67 @@ your way to the top!!"
 horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="."]
-offset_left = 4979.0
-offset_top = -64.0
-offset_right = 5322.0
-offset_bottom = 176.0
+offset_left = 4514.0
+offset_top = -114.0
+offset_right = 4857.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 20
 text = "This is a beacon. Your main goal is
  to activate all of them to progress 
-to the next level. In this case 
-there's only one - charm it
-by pressing the E key "
+to the next level. Once you charm it 
+by pressing e, a 10 second timer will
+begin and you must go activate the one 
+further down this line within 
+the time period"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 5738.0
+offset_top = 15.0
+offset_right = 6109.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_x0ede")
+theme_override_font_sizes/font_size = 20
+text = "Once you complete
+ a level, you can go to 
+the next using this portal"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Teleport" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+position = Vector2(6080, 64.5)
+shape = SubResource("RectangleShape2D_oo05i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Teleport"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(6080.5, 67)
+scale = Vector2(0.145001, 0.41)
+texture = ExtResource("26_yvr8n")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerL" type="Label" parent="CanvasLayer"]
-offset_left = 37.0
-offset_top = 259.0
-offset_right = 77.0
-offset_bottom = 282.0
+offset_left = 447.0
+offset_top = 355.0
+offset_right = 487.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("17_x0ede")
 theme_override_font_sizes/font_size = 15
 
+[connection signal="body_entered" from="Bottom" to="Player" method="_on_bottom_body_entered"]
 [connection signal="body_entered" from="Beacon1" to="Player" method="_on_beacon_1_body_entered"]
 [connection signal="body_exited" from="Beacon1" to="Player" method="_on_beacon_1_body_exited"]
 [connection signal="body_entered" from="Beacon2" to="Player" method="_on_beacon_2_body_entered"]
@@ -578,3 +681,4 @@ theme_override_font_sizes/font_size = 15
 [connection signal="pressed" from="Paused/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paused2/Resume2" to="." method="_on_resume_2_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Teleport" to="Player" method="_on_teleport_body_entered"]

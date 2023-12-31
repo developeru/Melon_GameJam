@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jk6crkq3golt"
+path="res://.godot/imported/18-Land from jump 4.ogg-f96478f8377c44197f0fd0794d884f6f.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/18-Land from jump 4.ogg"
+dest_files=["res://.godot/imported/18-Land from jump 4.ogg-f96478f8377c44197f0fd0794d884f6f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

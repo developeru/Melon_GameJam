@@ -1,9 +1,13 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmesi8pw4g2ao"]
+[gd_scene load_steps=54 format=3 uid="uid://bmesi8pw4g2ao"]
 
-[ext_resource type="Script" path="res://scripts/World.gd" id="1_obow5"]
+[ext_resource type="Script" path="res://scripts/World4.gd" id="1_kaieg"]
+[ext_resource type="Texture2D" uid="uid://dq8dojbs6ak8c" path="res://sprites/bg/Level5B&w.png" id="2_hvsbd"]
 [ext_resource type="Script" path="res://scripts/Movement.gd" id="2_nmv5f"]
+[ext_resource type="Shader" path="res://shaders/level0_2.gdshader" id="3_8oyv8"]
 [ext_resource type="Texture2D" uid="uid://cryo0fnpaguy2" path="res://sprites/player/idle/Idle_animation_0000.png" id="3_cvc22"]
 [ext_resource type="Texture2D" uid="uid://ddojd234ywc2s" path="res://sprites/player/idle/Idle_animation_0001.png" id="4_i7f3u"]
+[ext_resource type="Texture2D" uid="uid://bimjqu7w0koi7" path="res://sprites/bg/Level5color.png" id="4_lbw0j"]
+[ext_resource type="Shader" path="res://shaders/level0.gdshader" id="5_5lhw2"]
 [ext_resource type="Texture2D" uid="uid://bjl1x4vtwwkkd" path="res://sprites/player/idle/Idle_animation_0002.png" id="5_36xfg"]
 [ext_resource type="Texture2D" uid="uid://ivx6sqnvipav" path="res://sprites/player/running/Timeline 1_0000.png" id="6_aaha1"]
 [ext_resource type="Texture2D" uid="uid://tig253slp26p" path="res://sprites/player/running/Timeline 1_0001.png" id="7_gi6pr"]
@@ -17,11 +21,32 @@
 [ext_resource type="Texture2D" uid="uid://81xm8s1acee1" path="res://sprites/player/running/Timeline 1_0009.png" id="15_kysih"]
 [ext_resource type="Texture2D" uid="uid://bvponi5e85cni" path="res://sprites/player/running/Timeline 1_0010.png" id="16_dxmdk"]
 [ext_resource type="FontFile" uid="uid://dw4q2lgvxq2x8" path="res://font/KnightWarrior-w16n8.otf" id="17_p6ekt"]
-[ext_resource type="AudioStream" uid="uid://53pfqccq01s1" path="res://music/MelonJam_Track_1_draft.mp3" id="18_g7g4u"]
 [ext_resource type="Texture2D" uid="uid://bguejwiflte4e" path="res://sprites/beacon/inactive/Beacon_inactive_0000.png" id="19_b2utr"]
 [ext_resource type="Texture2D" uid="uid://cc51k64u1tpq2" path="res://sprites/beacon/inactive/Beacon_inactive_0001.png" id="20_2pyvi"]
+[ext_resource type="AudioStream" uid="uid://b5falvndtp8kw" path="res://music/Melon-Jam-TRACK-adjustments.mp3" id="21_016bu"]
 [ext_resource type="Texture2D" uid="uid://cthjqe0j1rqlo" path="res://sprites/beacon/inactive/Beacon_inactive_0002.png" id="21_w4ag2"]
 [ext_resource type="Texture2D" uid="uid://bsild7akmvubb" path="res://sprites/beacon/inactive/Beacon_inactive_0003.png" id="22_oegey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7bg06"]
+shader = ExtResource("3_8oyv8")
+shader_parameter/a = 0.084
+shader_parameter/b = 0.126
+shader_parameter/h = 0.673
+shader_parameter/k = 0.384
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5s8s8"]
+shader = ExtResource("5_5lhw2")
+shader_parameter/a = 0.084
+shader_parameter/b = 0.126
+shader_parameter/h = 0.514
+shader_parameter/k = 0.715
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pqfo"]
+shader = ExtResource("5_5lhw2")
+shader_parameter/a = 0.084
+shader_parameter/b = 0.126
+shader_parameter/h = 0.286
+shader_parameter/k = 0.584
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6e7f"]
 radius = 16.0
@@ -162,25 +187,33 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idhfj"]
-size = Vector2(1276, 241)
+size = Vector2(1102.92, 1540.26)
 
-[sub_resource type="QuadMesh" id="QuadMesh_f4hvr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb088"]
+size = Vector2(967.354, 792.857)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snefn"]
-size = Vector2(52, 126)
+size = Vector2(51, 123.146)
 
-[sub_resource type="QuadMesh" id="QuadMesh_fcl7x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rejxf"]
+size = Vector2(51, 143.49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cece"]
-size = Vector2(1849, 848)
+size = Vector2(1574, 1657.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykf10"]
-size = Vector2(48.0004, 174)
+size = Vector2(62.0002, 182)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpcma"]
+size = Vector2(71.0003, 184.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ump"]
+size = Vector2(58.4997, 191)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fdx"]
-size = Vector2(48.0004, 221)
+size = Vector2(58.4997, 146)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7qkg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ondoj"]
 size = Vector2(69.5, 51.5)
 
 [sub_resource type="Animation" id="Animation_lbwy8"]
@@ -233,7 +266,7 @@ _data = {
 "RESET": SubResource("Animation_5g7uq")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qot31"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u8fe"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -253,8 +286,60 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xph2r"]
+size = Vector2(69.5, 51.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rohii"]
+size = Vector2(229, 4242.53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ravej"]
+size = Vector2(332.009, 5131.74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0216"]
+size = Vector2(335, 4945.75)
+
 [node name="World" type="Node2D"]
-script = ExtResource("1_obow5")
+script = ExtResource("1_kaieg")
+
+[node name="BGBW" type="TextureRect" parent="."]
+light_mask = 0
+offset_left = -22.0
+offset_top = -633.0
+offset_right = 4866.0
+offset_bottom = 1750.0
+texture = ExtResource("2_hvsbd")
+
+[node name="BGC3" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_7bg06")
+offset_left = -22.0
+offset_top = -633.0
+offset_right = 4866.0
+offset_bottom = 1750.0
+texture = ExtResource("4_lbw0j")
+
+[node name="BGC2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_5s8s8")
+offset_left = -22.0
+offset_top = -633.0
+offset_right = 4866.0
+offset_bottom = 1750.0
+texture = ExtResource("4_lbw0j")
+
+[node name="BGC" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_2pqfo")
+offset_left = -22.0
+offset_top = -633.0
+offset_right = 4866.0
+offset_bottom = 1750.0
+texture = ExtResource("4_lbw0j")
+
+[node name="BGCMain" type="TextureRect" parent="."]
+visible = false
+offset_left = -22.0
+offset_top = 633.0
+offset_right = 4866.0
+offset_bottom = 3016.0
+texture = ExtResource("4_lbw0j")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(5, -335)
@@ -295,218 +380,96 @@ limit_left = 0
 scale = Vector2(0.955, 0.77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(629.342, 918)
+position = Vector2(529.168, 1506.49)
 shape = SubResource("RectangleShape2D_idhfj")
 one_way_collision_margin = 2.3
 debug_color = Color(0, 0.596078, 0.72549, 0.419608)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground"]
-position = Vector2(627.342, 918)
-scale = Vector2(1280, 250)
-mesh = SubResource("QuadMesh_f4hvr")
 
 [node name="Ground2" type="StaticBody2D" parent="."]
 scale = Vector2(0.955, 0.77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
-position = Vector2(3636.76, 1676.95)
-shape = SubResource("RectangleShape2D_idhfj")
+position = Vector2(2961.35, 1878.25)
+shape = SubResource("RectangleShape2D_wb088")
 one_way_collision_margin = 2.3
 debug_color = Color(0, 0.596078, 0.72549, 0.419608)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ground2"]
-position = Vector2(3634.76, 1676.95)
-scale = Vector2(1280, 250)
-mesh = SubResource("QuadMesh_f4hvr")
 
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2(-2512, -596)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(4558, 591.582)
+position = Vector2(4220.5, 569.927)
 shape = SubResource("RectangleShape2D_snefn")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall"]
-position = Vector2(4558.24, 591.082)
-scale = Vector2(52.4803, 129)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Wall3" type="StaticBody2D" parent="."]
 position = Vector2(-999, -389)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2(4263, 618.418)
+position = Vector2(3814, 708.354)
 shape = SubResource("RectangleShape2D_snefn")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall3"]
-position = Vector2(4263.24, 617.918)
-scale = Vector2(52.4803, 129)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Wall5" type="StaticBody2D" parent="."]
 position = Vector2(-999, -389)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
-position = Vector2(4559, 656.392)
+position = Vector2(3691, 589.873)
 shape = SubResource("RectangleShape2D_snefn")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall5"]
-position = Vector2(4559.24, 655.892)
-scale = Vector2(52.4803, 129)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Wall4" type="StaticBody2D" parent="."]
 position = Vector2(-759, -548)
 scale = Vector2(1, 1.975)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2(4173, 818.924)
-shape = SubResource("RectangleShape2D_snefn")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall4"]
-position = Vector2(4173.24, 818.424)
-scale = Vector2(52.4803, 129)
-mesh = SubResource("QuadMesh_fcl7x")
+position = Vector2(3688, 700.1)
+shape = SubResource("RectangleShape2D_rejxf")
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 position = Vector2(-792, -243)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2(5727, 1037.85)
+position = Vector2(4869, 1327.9)
 scale = Vector2(1, 0.8)
 shape = SubResource("RectangleShape2D_3cece")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Wall2"]
-position = Vector2(5724, 1068.85)
-scale = Vector2(1852, 733.695)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(-68, -146)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2(2028.59, 1404.33)
+position = Vector2(2092, 1168)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ykf10")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
-position = Vector2(2028.5, 1404.33)
-rotation = 1.5708
-scale = Vector2(48.652, 175)
-mesh = SubResource("QuadMesh_fcl7x")
 
 [node name="Platform4" type="StaticBody2D" parent="."]
 position = Vector2(495, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
-position = Vector2(1137.09, 789.326)
+position = Vector2(878.687, 742.5)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_s1fdx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform4"]
-position = Vector2(1136.96, 789.326)
-rotation = 1.5708
-scale = Vector2(48.652, 221.921)
-mesh = SubResource("QuadMesh_fcl7x")
+shape = SubResource("RectangleShape2D_qpcma")
 
 [node name="Platform5" type="StaticBody2D" parent="."]
 position = Vector2(2796, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
-position = Vector2(1097.5, 458)
+position = Vector2(405.5, 416.5)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_s1fdx")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform5"]
-position = Vector2(1097.37, 458)
-rotation = 1.5708
-scale = Vector2(48.652, 221.921)
-mesh = SubResource("QuadMesh_fcl7x")
+shape = SubResource("RectangleShape2D_n2ump")
 
 [node name="Platform3" type="StaticBody2D" parent="."]
 position = Vector2(828, -231)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-position = Vector2(1614.09, 1302.33)
+position = Vector2(808, 1434.25)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_s1fdx")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
-position = Vector2(1613.96, 1302.33)
-rotation = 1.5708
-scale = Vector2(48.652, 221.921)
-mesh = SubResource("QuadMesh_fcl7x")
-
-[node name="Paused" type="Node" parent="."]
-process_mode = 2
-
-[node name="Resume" type="Button" parent="Paused"]
-visible = false
-offset_left = 460.0
-offset_top = 220.0
-offset_right = 856.0
-offset_bottom = 515.0
-theme_override_fonts/font = ExtResource("17_p6ekt")
-theme_override_font_sizes/font_size = 60
-text = "Resume"
-
-[node name="Label" type="Label" parent="Paused"]
-visible = false
-offset_left = 403.0
-offset_top = 92.0
-offset_right = 932.0
-offset_bottom = 122.0
-theme_override_fonts/font = ExtResource("17_p6ekt")
-theme_override_font_sizes/font_size = 25
-text = "You have paused the game. Press \"Resume\" or Enter to unpause"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_g7g4u")
-volume_db = -20.0
+stream = ExtResource("21_016bu")
+volume_db = 2.024
 autoplay = true
-
-[node name="Beacon" type="StaticBody2D" parent="."]
-position = Vector2(-4679, 450)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon"]
-position = Vector2(5513.25, 132.25)
-shape = SubResource("RectangleShape2D_c7qkg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon"]
-libraries = {
-"": SubResource("AnimationLibrary_uxa63")
-}
-autoplay = "Inactive"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon"]
-position = Vector2(5515.25, 29.5)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_qot31")
-animation = &"Inactive"
-frame = 1
-
-[node name="Beacon3" type="StaticBody2D" parent="."]
-position = Vector2(-2363, 180)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon3"]
-position = Vector2(6005.25, 987.25)
-shape = SubResource("RectangleShape2D_c7qkg")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon3"]
-libraries = {
-"": SubResource("AnimationLibrary_uxa63")
-}
-autoplay = "Inactive"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon3"]
-position = Vector2(6007.25, 884.5)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_qot31")
-animation = &"Inactive"
-frame = 1
 
 [node name="Label" type="Label" parent="."]
 offset_left = 49.0
@@ -516,4 +479,156 @@ offset_bottom = 503.0
 text = "Now its time to apply all that you have 
 learned to completely light the five beacons"
 
+[node name="Beacon1" type="Area2D" parent="."]
+position = Vector2(11, 115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon1"]
+position = Vector2(1361.25, 597.25)
+shape = SubResource("RectangleShape2D_ondoj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon1"]
+libraries = {
+"": SubResource("AnimationLibrary_uxa63")
+}
+autoplay = "Inactive"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon1"]
+position = Vector2(1363.25, 494.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3u8fe")
+animation = &"Inactive"
+frame = 1
+
+[node name="Beacon2" type="Area2D" parent="."]
+position = Vector2(-705, 115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon2"]
+position = Vector2(3152.25, 997.25)
+shape = SubResource("RectangleShape2D_xph2r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon2"]
+libraries = {
+"": SubResource("AnimationLibrary_uxa63")
+}
+autoplay = "Inactive"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon2"]
+position = Vector2(3154.25, 894.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3u8fe")
+animation = &"Inactive"
+frame = 1
+
+[node name="Beacon3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beacon3"]
+position = Vector2(3248.25, 384.25)
+shape = SubResource("RectangleShape2D_xph2r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Beacon3"]
+libraries = {
+"": SubResource("AnimationLibrary_uxa63")
+}
+autoplay = "Inactive"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Beacon3"]
+position = Vector2(3250.25, 281.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3u8fe")
+animation = &"Inactive"
+frame = 1
+
+[node name="Paused" type="Node" parent="."]
+process_mode = 2
+
+[node name="Resume" type="Button" parent="Paused"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 3.0
+offset_top = 225.0
+offset_right = 399.0
+offset_bottom = 520.0
+theme_override_fonts/font = ExtResource("17_p6ekt")
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[node name="Label" type="Label" parent="Paused"]
+offset_left = 159.0
+offset_top = 170.0
+offset_right = 775.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("17_p6ekt")
+theme_override_font_sizes/font_size = 25
+text = "You have paused the game. Press \"Resume\" or Enter to unpause"
+
+[node name="Paused2" type="Node" parent="."]
+process_mode = 2
+
+[node name="Resume2" type="Button" parent="Paused2"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Paused2"]
+offset_left = 1862.0
+offset_top = -614.0
+offset_right = 3223.0
+offset_bottom = -500.0
+theme_override_fonts/font = ExtResource("17_p6ekt")
+theme_override_font_sizes/font_size = 100
+text = "Map Inspector (Press M to leave)"
+
+[node name="Camera2D" type="Camera2D" parent="Paused2"]
+position = Vector2(2489, 739)
+zoom = Vector2(0.25, 0.25)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerL" type="Label" parent="CanvasLayer"]
+offset_left = 447.0
+offset_top = 355.0
+offset_right = 487.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_p6ekt")
+theme_override_font_sizes/font_size = 15
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(5008, 373.47)
+shape = SubResource("RectangleShape2D_rohii")
+
+[node name="Top" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(2552.13, -1508)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ravej")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(-24.5, 55.7335)
+shape = SubResource("RectangleShape2D_rohii")
+
+[node name="Bottom" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(2404.13, 1917)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_j0216")
+
+[connection signal="body_entered" from="Beacon1" to="Player" method="_on_beacon_1_body_entered"]
+[connection signal="body_exited" from="Beacon1" to="Player" method="_on_beacon_1_body_exited"]
+[connection signal="body_entered" from="Beacon2" to="Player" method="_on_beacon_2_body_entered"]
+[connection signal="body_exited" from="Beacon2" to="Player" method="_on_beacon_2_body_exited"]
+[connection signal="body_entered" from="Beacon3" to="Player" method="_on_beacon_3_body_entered"]
+[connection signal="body_exited" from="Beacon3" to="Player" method="_on_beacon_3_body_exited"]
 [connection signal="pressed" from="Paused/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Paused2/Resume2" to="." method="_on_resume_2_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Bottom" to="Player" method="_on_bottom_body_entered"]

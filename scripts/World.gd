@@ -7,12 +7,23 @@ var hasWon := false
 
 @onready var timer = get_node("Timer")
 
+@onready var audiostream = get_node("AudioStreamPlayer")
+var finishedLevel := false
+
+
+
 func _ready():
 	
 	get_node("Paused/Resume").visible = false
 	get_node("Paused/Label").visible = false
 	get_node("Paused2/Resume2").visible = false
 	get_node("Paused2/Label").visible = false
+	
+	
+	get_node("BGC").visible = false
+	get_node("BGC2").visible = false
+	get_node("BGCMain").visible = false
+
 	
 # Pausing
 func PauseGame() -> void:
@@ -41,12 +52,16 @@ func _process(delta):
 			#print("isB2Activated:" + str(isB2Activated))
 		PauseGame() #Pause
 		
+		if audiostream.playing == false:
+				audiostream.play()
 		if !hasWon:
 			if isB1Activated: #Timer
 				
 				if !startedCountdown:
 					startedCountdown = true
 					timer.start()
+					get_node("BGC2").visible = true
+					print("works?")
 					
 				else:
 					if isB2Activated:
@@ -58,6 +73,8 @@ func _process(delta):
 				if !startedCountdown:
 					startedCountdown = true
 					timer.start()
+					get_node("BGC").visible = true
+					print("Workd!?")
 				else:
 					if isB1Activated:
 						hasWon = true
@@ -69,7 +86,10 @@ func _process(delta):
 		else:
 			timer.stop()
 			timer.emit_signal("timeout")
-			get_tree().change_scene_to_file("res://scenes/level1.tscn")
+			#get_node("Player/Camera2D").enabled = false
+			#get_node("Paused2/Camera2D").enabled = true
+			get_node("BGCMain").visible = true
+			finishedLevel = true
 			
 func _on_resume_pressed():
 	get_tree().paused = false
@@ -93,4 +113,5 @@ func _on_timer_timeout():
 	if !hasWon:
 		get_node("CanvasLayer/TimerL").visible = false
 	
+
 

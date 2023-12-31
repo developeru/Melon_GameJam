@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3xsuptkie7an"
+path="res://.godot/imported/20-Footstep synth 2.ogg-c98adcb6c4a2a5f813bb004a55f6dd8f.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/20-Footstep synth 2.ogg"
+dest_files=["res://.godot/imported/20-Footstep synth 2.ogg-c98adcb6c4a2a5f813bb004a55f6dd8f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

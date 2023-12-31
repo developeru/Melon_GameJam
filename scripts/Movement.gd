@@ -18,6 +18,10 @@ var playerGravity = gravity
 var isInsideB1 := false
 var isInsideB2 := false
 
+var goToNextLevel := false
+
+var reloadScene := false
+
 func _ready():
 	isInsideB1 = false
 	isInsideB2 = false
@@ -44,14 +48,18 @@ func MakeStatic():
 	velocity.x = 0
 	velocity.y = 0
 
+
+
 func _process(delta):
 		if limit == 0:
 			isInsideB1 = false
 			isInsideB2 = false
+			goToNextLevel = false
+			reloadScene = false
+			
 			limit = 1
 		
-		print(isInsideB1)
-		print(isInsideB2)
+	
 		if Input.is_action_just_pressed("ui_charm") && (isInsideB1 || isInsideB2):
 			
 			if isInsideB1:
@@ -60,8 +68,13 @@ func _process(delta):
 			if isInsideB2:
 				world.isB2Activated = true
 				
-			
-
+		if goToNextLevel && world.finishedLevel:
+			get_tree().change_scene_to_file("res://scenes/level1.tscn")
+		
+		if reloadScene:
+			transform.origin.x = 5
+			transform.origin.y = -335
+			reloadScene = false
 	
 func _physics_process(delta):
 	
@@ -72,7 +85,7 @@ func _physics_process(delta):
 	if (leftray.is_colliding() || rightray.is_colliding()) && (Input.is_action_just_pressed("ui_latch") || Input.is_action_pressed("ui_latch")):
 		enableLatching = true
 		
-	if Input.is_action_just_released("ui_latch"):
+	if Input.is_action_just_released("ui_latch") && (!leftray.is_colliding() && rightray.is_colliding()):
 		enableLatching = false
 		canDoubleJump = true
 		playerGravity = gravity
@@ -89,7 +102,10 @@ func _physics_process(delta):
 		playerGravity = gravity
 		velocity.y = JUMP_VELOCITY
 		canDoubleJump = true
-		
+	
+	if Input.is_action_just_pressed("ui_downc"):
+		playerGravity = gravity
+	
 	if canDoubleJump && Input.is_action_just_pressed("ui_up") && !is_on_floor() && !enableLatching:
 		velocity.y = JUMP_VELOCITY
 		canDoubleJump = false
@@ -114,3 +130,20 @@ func _physics_process(delta):
 		MakeStatic() #Cancels all forces suffered by the player
 		
 	move_and_slide()
+
+
+func _on_teleport_body_entered(body):
+	goToNextLevel = true
+
+
+func _on_bottom_body_entered(body):
+	reloadScene = true
+	
+
+
+func _on_beacon_3_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_beacon_3_body_exited(body):
+	pass # Replace with function body.
