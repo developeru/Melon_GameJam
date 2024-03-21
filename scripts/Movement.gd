@@ -14,7 +14,6 @@ var playerGravity = gravity
 @onready var animPlayer = get_node("AnimationPlayer") #Gets the AnimationPlayer node once the node has loaded
 @onready var animSprite = get_node("AnimatedSprite2D") #Gets the AnimationSprite node once the node has loaded
 
-@onready var world =  get_tree().get_root().get_node("World")
 var isInsideB1 := false
 var isInsideB2 := false
 
@@ -22,10 +21,22 @@ var goToNextLevel := false
 
 var reloadScene := false
 
+@onready var world
+@onready var currentScene = get_tree().current_scene.name
+		
 func _ready():
 	isInsideB1 = false
 	isInsideB2 = false
-	
+	match currentScene:
+		"Level0":
+			world =  get_tree().get_root().get_node("Level0")
+		"Level1":
+			world =  get_tree().get_root().get_node("Level1")
+		"Level2":
+			world =  get_tree().get_root().get_node("Level2")
+		"Level3":
+			world =  get_tree().get_root().get_node("Level3")
+			
 func _on_beacon_1_body_entered(body):
 	isInsideB1 = true
 	print("?")
@@ -75,7 +86,7 @@ func _process(delta):
 			transform.origin.x = 5
 			transform.origin.y = -335
 			reloadScene = false
-	
+		
 func _physics_process(delta):
 	
 	var leftray = get_node("RayCast2D2")
@@ -133,17 +144,22 @@ func _physics_process(delta):
 
 
 func _on_teleport_body_entered(body):
-	goToNextLevel = true
-
+	match currentScene:
+		"Level0":
+			get_tree().change_scene_to_file("res://scenes/level1.tscn")
+			print("0")
+		"Level1":
+			get_tree().change_scene_to_file("res://scenes/level2.tscn")
+			print("1")
+		"Level2":
+			get_tree().change_scene_to_file("res://scenes/level3.tscn")
+			print("2")
+		"Level3":
+			pass #gotta put an end screen
 
 func _on_bottom_body_entered(body):
 	reloadScene = true
 	
+			
+	
 
-
-func _on_beacon_3_body_entered(body):
-	pass # Replace with function body.
-
-
-func _on_beacon_3_body_exited(body):
-	pass # Replace with function body.

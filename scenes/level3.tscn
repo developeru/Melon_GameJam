@@ -298,7 +298,7 @@ size = Vector2(332.009, 5131.74)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0216"]
 size = Vector2(335, 4945.75)
 
-[node name="World" type="Node2D"]
+[node name="Level3" type="Node2D"]
 script = ExtResource("1_kaieg")
 
 [node name="BGBW" type="TextureRect" parent="."]

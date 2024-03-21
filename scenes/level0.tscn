@@ -291,7 +291,7 @@ size = Vector2(69.5, 51.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo05i"]
 size = Vector2(28, 77)
 
-[node name="World" type="Node2D"]
+[node name="Level0" type="Node2D"]
 script = ExtResource("1_fuumv")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
